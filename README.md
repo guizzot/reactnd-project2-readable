@@ -4,11 +4,12 @@ This repo is a code-along with the second project in the [React Nanodegree progr
 
 ## Project Setup
 
+* clone or download the Project 
+
 * access "readable-server -> api-server"
 * install the dependencies - `npm install`
 * run - `node server`
 
-* clone or download the Project 
 * access root
 * install the dependencies - `npm install`
 * run - `yarn start` or `npm start`
