@@ -23,8 +23,8 @@ class ModalEditPost extends Component {
                         <PostEdit post={this.props.post} />
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="secondary" onClick={handleClose}>
-                            Close
+                        <Button variant="dark" onClick={handleClose}>
+                            Fechar
                         </Button>
                     </Modal.Footer>
                 </Modal>

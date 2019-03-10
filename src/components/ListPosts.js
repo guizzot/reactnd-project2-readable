@@ -1,19 +1,19 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PostListDetail from './PostListDetail';
 
-class ListPosts extends Component {
-  render() {
+const ListPosts = props => {
+    const { postsIds } = props
     return (
       <React.Fragment>
-        {this.props.postsIds.length > 0
-          ? this.props.postsIds.map((id) => (
+        {postsIds.length > 0
+          ? postsIds.map((id) => (
             <PostListDetail key={id} id={id} />
             ))
-          : <p>Não há nenhuma postagem aqui.</p>
+          : ''
         }
       </React.Fragment>
     ) 
-  }
+  
 }
 
 export default ListPosts

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { formatDate } from '../utils/helpers'
@@ -6,10 +6,10 @@ import PostVotes from './PostVotes'
 import { Card, Button } from 'react-bootstrap'
 import FaAlignJustify from 'react-icons/lib/fa/align-justify'
 
-class PostListItem extends Component {
+const PostListItem = props => {
 
-  render() {
-    const { post } = this.props
+    const { post } = props
+
     return (
       <React.Fragment>
         <Card>
@@ -42,7 +42,7 @@ class PostListItem extends Component {
         </Card>
       </React.Fragment>
     )
-  }
+  
 }
 
 function mapStateToProps ({posts}, {id}) {

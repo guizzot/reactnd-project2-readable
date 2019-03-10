@@ -45,12 +45,12 @@ class Post extends Component {
     const { post } = this.props
 
     if (!post && this.props.loading === 0) {
-      return <Redirect to='/' />
+      return <Redirect to='/Page404' />
     }
 
     if(this.state.redirectFlag === true) {
-        return <Redirect to={'/post/edit/' + this.props.post.id} />
-      }
+      return <Redirect to={'/post/edit/' + this.props.post.id} />
+    }
 
     return (
       <Fragment>

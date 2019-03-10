@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { handleEditPost } from '../actions/posts'
 import { connect } from 'react-redux'
+import { Button, Alert } from 'react-bootstrap';
 
 class PostEdit extends Component {
   state = {
@@ -29,7 +30,7 @@ class PostEdit extends Component {
 
   render() {
     if(this.state.submitedFlag){
-      return <p className='message-ok'>Your post was updated.</p>
+      return <Alert variant="success"> Postagem atualizada! </Alert> 
     }
     return (
       <Fragment>
@@ -39,7 +40,6 @@ class PostEdit extends Component {
             <input
               type='text'
               id='title'
-              placeholder='Post title goes here'
               value={this.state.title}
               onChange={this.handleChange}
               required
@@ -48,7 +48,7 @@ class PostEdit extends Component {
           <p>
             <label htmlFor='category'>Category</label>
             <select onChange={this.handleChange} value={this.state.category} id='category' required>
-              <option value="">Pick one here...</option>
+              <option value=""></option>
               {Object.keys(this.props.categories).map(categorie =>
                 <option value={this.props.categories[categorie].path} key={this.props.categories[categorie].path}>{this.props.categories[categorie].path}</option>
               )}
@@ -57,7 +57,6 @@ class PostEdit extends Component {
           <p>
             <label htmlFor='body'>Content</label>
             <textarea
-              placeholder="Tell me everything"
               value={this.state.body}
               onChange={this.handleChange}
               className='textarea'
@@ -65,7 +64,9 @@ class PostEdit extends Component {
               required
             />
           </p>
-          <p><input type="submit" className='button' value='Update Post' /></p>
+          <Button type="submit" variant="dark">
+                Salvar
+          </Button>
         </form>
       </Fragment>
     )
